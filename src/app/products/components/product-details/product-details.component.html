@@ -1,0 +1,12 @@
+<div class="card" [ngClass]="{'bg-danger': product.Saldo < 0, 'bg-success': product.Saldo > 0, 'bg-info': !product.Saldo}" title="De saldo’s zijn uit het CRM-systeem afkomstig">
+    <div class="card-header">      
+     <h5> Product id: {{product.ProductId}} </h5>
+     <h5> Product name: {{product.ProductName}} </h5>
+    </div>
+    <div class="card-body">
+      <h6 class="card-title">Service name: <span *ngIf="!product.ServiceName">Unknown</span> {{product.ServiceName}}</h6>
+      <p *ngIf="product.CreditVolume" class="card-text">Credit volume: {{product.CreditVolume}}</p>
+      <p *ngIf="product.DebitVolume" class="card-text">Debit volume: {{product.DebitVolume}}</p>
+      <p *ngIf="product.Saldo">Saldo: {{product.Saldo}}</p>
+    </div>
+</div>
